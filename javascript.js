@@ -18,18 +18,23 @@ function clearPassword() {
 //function that checks for what password options were selected and save at least one of the selected options into a temp string
 function getSelectedItems(){
     for (i=0; i<selectedItems.length; i++){
+        
         if (selectedItems[i].label === "LowerCase"){
             tempPass = tempPass.concat(lowerAlp.charAt(Math.floor(Math.random() * lowerAlp.length)));
             tempKeyPool = tempKeyPool.concat(lowerAlp)
+            // console.log(tempPass)
         }if (selectedItems[i].label === "UpperCase"){
             tempPass = tempPass.concat(upperAlp.charAt(Math.floor(Math.random() * upperAlp.length)));
             tempKeyPool = tempKeyPool.concat(upperAlp)
+            // console.log(tempPass)
         }if (selectedItems[i].label === "SpecialSymbols"){
             tempPass = tempPass.concat(specialSym.charAt(Math.floor(Math.random() * specialSym.length)));
             tempKeyPool = tempKeyPool.concat(specialSym)
+            // console.log(tempPass)
         }if (selectedItems[i].label === "Numbers"){
             tempPass = tempPass.concat(numbers.charAt(Math.floor(Math.random() * numbers.length)));
             tempKeyPool = tempKeyPool.concat(numbers)
+            // console.log(tempPass)
         }
     }
 }

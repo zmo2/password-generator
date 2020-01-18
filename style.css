@@ -38,3 +38,8 @@
 #passLength{
     width: 100%;
 }
+
+.jsButtons{
+    margin: auto;
+    text-align: center;
+}
