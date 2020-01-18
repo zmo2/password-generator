@@ -26,12 +26,15 @@
         </div>
         <div class="container userInputs">
           <input type="text" id = "passLength">
+          <br>
           
           <select name="passwordAttribute" id="passOptions" multiple>
-            <option value="special">Special Symbols</option>
-            <option value="number">Numbers</option>
-            <option value="upper">UpperCase</option>
-            <option value="lower">LowerCase</option>
+            <option id = "wantLower" selected>LowerCase</option>
+            <option id = "wantUpper">UpperCase</option>
+            <option id = "wantSymbol">SpecialSymbols</option>
+            <option id = wantNumber>Numbers</option>
+            
+            
           </select>
         </div> 
         
@@ -40,7 +43,7 @@
           Generate Password
         </button>
 
-        <button onclick="clearPassword()" class= "clearButton">
+        <button onclick = "clearPassword()"id= "clearButton">
           Clear
         </button>
         </div>
