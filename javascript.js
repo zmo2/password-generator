@@ -2,45 +2,56 @@ var lowerAlp = "abcdefghijklmnopqrstuvwxyz"
 var upperAlp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var specialSym = "!@#$%^&*"
 var numbers = "1234567890"
+var tempPass =""
+var tempKeyPool = ""
 var finalPassword = "";
 var optionList = document.getElementById("passOptions")
 var selectedItems = optionList.selectedOptions
-var wantSymbol = false
-var wantLower = false
-var wantUpper = false
-var wantNumber =false
-
-
 
 function clearPassword() {
-    document.getElementById('mainDisplay').innerText = "Working";
+    // document.getElementById('mainDisplay').innerText = "Working";
     finalPassword = "";
-    getSelectedItems()
+    tempKeyPool = ""
+    tempPass = ""
 }
 
 function getSelectedItems(){
     for (i=0; i<selectedItems.length; i++){
         if (selectedItems[i].label === "LowerCase"){
-            wantLower = true
+            tempPass = tempPass.concat(lowerAlp.charAt(Math.floor(Math.random() * lowerAlp.length)));
+            tempKeyPool = tempKeyPool.concat(lowerAlp)
+            //when true: save a position
         }if (selectedItems[i].label === "UpperCase"){
-            wantUpper = true
+            tempPass = tempPass.concat(upperAlp.charAt(Math.floor(Math.random() * upperAlp.length)));
+            tempKeyPool = tempKeyPool.concat(upperAlp)
         }if (selectedItems[i].label === "SpecialSymbols"){
-            wantSymbol = true
+            tempPass = tempPass.concat(specialSym.charAt(Math.floor(Math.random() * specialSym.length)));
+            tempKeyPool = tempKeyPool.concat(specialSym)
         }if (selectedItems[i].label === "Numbers"){
-            wantNumber = true
+            tempPass = tempPass.concat(numbers.charAt(Math.floor(Math.random() * numbers.length)));
+            tempKeyPool = tempKeyPool.concat(numbers)
         }
-        console.log(selectedItems[i].label)
     }
 }
 
 function generatePassword(){
     var passwordLength = document.getElementById("passLength").value;
-        for (i=0; i<passwordLength; i++){
-            
-            finalPassword = finalPassword.concat(lowerAlp.charAt(Math.floor(Math.random() * lowerAlp.length)));
-        }
-
-
-
-    document.getElementById('mainDisplay').innerText = finalPassword;
+    if (passwordLength<8 || passwordLength>128){
+        document.getElementById('mainDisplay').innerText = "Please input password length between 8 and 128";
+    } else {
+        getSelectedItems()
+        finalPassword=tempPass
+            for (i=tempPass.length; i<passwordLength; i++){
+                finalPassword = finalPassword.concat(tempKeyPool.charAt(Math.floor(Math.random() * tempKeyPool.length)));
+            }
+        document.getElementById('mainDisplay').innerText = finalPassword;
+        clearPassword()
+    }
 }
+
+function copy(){
+    var textForCopy = document.getElementById("mainDisplay")
+    textForCopy.select()
+    document.execCommand("copy") 
+}
+
