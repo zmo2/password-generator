@@ -1,0 +1,52 @@
+.outBox{
+    margin: auto;
+    max-width: 700px;
+    min-width: 400px;
+    background-color: grey;
+}
+.mainTitle{
+    margin: auto;
+    max-width: 700px;
+    max-height: 300px;
+    min-width: 400px;
+    min-height: 50px;
+    background-color: grey;
+    text-align: right;
+}
+
+#mainDisplay{
+    margin: auto;
+    max-width: 700px;
+    max-height: 800px;
+    min-width: 400px;
+    min-height: 300px;
+    border-color: grey;
+    border-style: dashed;
+    border-width: 3px;
+    background-color: yellow;
+    text-align: center;
+    color: grey;
+}
+
+.passLength{
+    margin: auto;
+}
+
+.userInputsts{
+    margin: auto;
+}
+.genPassButton{
+    margin: auto;
+}
+
+.clearButton{
+    margin: auto;
+}
+
+#passOptions{
+    margin: auto;
+}
+
+.jsButtons{
+    margin-top: 20px;
+}
