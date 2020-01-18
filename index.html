@@ -24,9 +24,10 @@
    
             </textarea>
         </div>
+        <br><br>
         <div class="container userInputs">
-          <input type="number" id = "passLength">
-          <br>
+          <input type="number" id = "passLength" placeholder="enter between 8 and 128">
+          <br><br>
           
           <select name="passwordAttribute" id="passOptions" multiple>
             <option id = "wantLower" selected>LowerCase</option>
@@ -36,6 +37,7 @@
           </select>
         </div> 
         
+        <br>
         <div class="container jsButtons">
         <button onclick = "generatePassword()" type="button" class = "btn genPassButton">
           Generate Password
@@ -44,11 +46,9 @@
         <button type="button" onclick = "copy()" class = "btn copyToClip">
           Copy To Clipboard
         </button>
+        <br><br>
         </div>
- 
-        
       </div>
-   
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

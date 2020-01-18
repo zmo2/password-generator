@@ -8,19 +8,19 @@ var finalPassword = "";
 var optionList = document.getElementById("passOptions")
 var selectedItems = optionList.selectedOptions
 
+// function that clears the variables 
 function clearPassword() {
-    // document.getElementById('mainDisplay').innerText = "Working";
-    finalPassword = "";
+    finalPassword = ""
     tempKeyPool = ""
     tempPass = ""
 }
 
+//function that checks for what password options were selected and save at least one of the selected options into a temp string
 function getSelectedItems(){
     for (i=0; i<selectedItems.length; i++){
         if (selectedItems[i].label === "LowerCase"){
             tempPass = tempPass.concat(lowerAlp.charAt(Math.floor(Math.random() * lowerAlp.length)));
             tempKeyPool = tempKeyPool.concat(lowerAlp)
-            //when true: save a position
         }if (selectedItems[i].label === "UpperCase"){
             tempPass = tempPass.concat(upperAlp.charAt(Math.floor(Math.random() * upperAlp.length)));
             tempKeyPool = tempKeyPool.concat(upperAlp)
@@ -34,6 +34,7 @@ function getSelectedItems(){
     }
 }
 
+//generates the random password combining the temp string generated in getSelectedItems()
 function generatePassword(){
     var passwordLength = document.getElementById("passLength").value;
     if (passwordLength<8 || passwordLength>128){
@@ -49,6 +50,7 @@ function generatePassword(){
     }
 }
 
+//function to copy the password to the clipboard 
 function copy(){
     var textForCopy = document.getElementById("mainDisplay")
     textForCopy.select()

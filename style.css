@@ -2,7 +2,7 @@
     margin: auto;
     max-width: 700px;
     min-width: 400px;
-    background-color: darkblue;
+    background-color: #FBEAEB;
     margin-top: 30px;
 }
 .mainTitle{
@@ -11,36 +11,30 @@
     max-height: 300px;
     min-width: 400px;
     min-height: 50px;
-    background-color: darkblue;
+    background-color: #FBEAEB;
     font-size: 24px;
     font-weight: bold;
-    color: white
+    color: #2f3c7e
 }
 
 #mainDisplay{
     margin: auto;
     min-width: 100%;
     min-height: 100%;
-    border-color: grey;
+    border-color: #2f3c7e ;
     border-style: dashed;
     border-width: 3px;
-    background-color: khaki ;
+  ;
     text-align: center;
 }
 
-.genPassButton{
+.genPassButton, .copyToClip{
     margin: auto;
-    background-color: khaki;
+    background-color: #2f3c7e ;
+    color: #FBEAEB;
+    font-weight: bold;
 }
 
-.copyToClip{
-    background-color: khaki;
-}
-
-#passOptions{
-    margin: auto;
-}
-
-.jsButtons{
-    margin-top: 20px;
+#passLength{
+    width: 100%;
 }
